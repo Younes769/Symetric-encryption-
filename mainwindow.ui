@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>430</width>
+    <height>932</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>430</width>
+    <height>932</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Secure iMessage</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+    /* Main Window */
+    QMainWindow { 
+        background-color: #000000; 
+    }
+    QWidget#centralwidget { 
+        background-color: #000000; 
+    }
+    
+    /* iPhone Frame */
+    QFrame#phoneFrame {
+        background-color: #000000;
+        border: 2px solid #424245;
+        border-radius: 55px;
+        margin: 10px;
+    }
+    
+    /* Dynamic Island */
+    QFrame#dynamicIsland {
+        background-color: #000000;
+        border-radius: 20px;
+        min-height: 35px;
+        max-height: 35px;
+        min-width: 120px;
+        max-width: 120px;
+        margin-top: 12px;
+    }
+    
+    /* Status Bar */
+    QFrame#statusBar {
+        background-color: transparent;
+        margin-top: 5px;
+    }
+    QLabel#timeLabel {
+        color: #ffffff;
+        font-family: SF Pro Display;
+        font-size: 16pt;
+        font-weight: bold;
+    }
+    QLabel#batteryLabel {
+        color: #ffffff;
+        font-size: 14pt;
+    }
+    
+    /* Navigation Bar */
+    QFrame#navBar {
+        background-color: rgba(28, 28, 30, 180);
+        border-bottom: 1px solid #2c2c2e;
+        padding: 10px;
+    }
+    QLabel#contactName {
+        color: #ffffff;
+        font-family: SF Pro Display;
+        font-size: 18pt;
+        font-weight: bold;
+    }
+    
+    /* Key Input */
+    QLineEdit {
+        background-color: rgba(28, 28, 30, 180);
+        color: #ffffff;
+        border-radius: 15px;
+        padding: 12px;
+        font-size: 14pt;
+        font-family: SF Pro Text;
+        border: none;
+    }
+    QLineEdit:focus {
+        border: 1px solid #0a84ff;
+        background-color: rgba(28, 28, 30, 220);
+    }
+    
+    /* Chat Area */
+    QScrollArea {
+        border: none;
+        background-color: transparent;
+    }
+    QWidget#chatContent {
+        background-color: transparent;
+    }
+    
+    /* Messages */
+    QFrame.messageFrame {
+        border-radius: 20px;
+        min-height: 40px;
+        padding: 5px;
+    }
+    QFrame#sentMessage {
+        background-color: #0a84ff;
+        margin-left: 60px;
+        margin-right: 15px;
+        border-radius: 20px;
+        padding: 10px;
+    }
+    QFrame#receivedMessage {
+        background-color: rgba(58, 58, 60, 180);
+        margin-left: 15px;
+        margin-right: 60px;
+        border-radius: 20px;
+        padding: 10px;
+    }
+    
+    /* Text Areas */
+    QPlainTextEdit {
+        background-color: rgba(28, 28, 30, 180);
+        color: #ffffff;
+        border: none;
+        border-radius: 20px;
+        padding: 12px;
+        font-size: 14pt;
+        font-family: SF Pro Text;
+        selection-background-color: #0a84ff;
+    }
+    QPlainTextEdit:focus {
+        background-color: rgba(28, 28, 30, 220);
+    }
+    QPlainTextEdit#outputText {
+        background-color: rgba(44, 44, 46, 180);
+        border: 1px solid rgba(60, 60, 62, 180);
+        font-family: SF Pro Mono;
+        font-size: 12pt;
+    }
+    
+    /* Buttons */
+    QPushButton {
+        background-color: #0a84ff;
+        color: white;
+        border-radius: 22px;
+        padding: 12px;
+        font-size: 14pt;
+        font-family: SF Pro Text;
+        min-height: 44px;
+    }
+    QPushButton:hover { 
+        background-color: #0070e0; 
+    }
+    QPushButton:pressed {
+        background-color: #005dc2;
+    }
+    QPushButton#sendButton {
+        background-color: #0a84ff;
+        border-radius: 20px;
+        min-width: 40px;
+        max-width: 40px;
+        min-height: 40px;
+        max-height: 40px;
+        font-size: 18pt;
+    }
+    QPushButton#generateKeyButton {
+        font-size: 16pt;
+    }
+    
+    /* Scroll Bars */
+    QScrollBar:vertical {
+        border: none;
+        background: transparent;
+        width: 8px;
+        margin: 0;
+    }
+    QScrollBar::handle:vertical {
+        background: rgba(255, 255, 255, 60);
+        border-radius: 4px;
+        min-height: 20px;
+    }
+    QScrollBar::handle:vertical:hover {
+        background: rgba(255, 255, 255, 100);
+    }
+    QScrollBar::add-line:vertical,
+    QScrollBar::sub-line:vertical {
+        height: 0;
+    }
+    QScrollBar::add-page:vertical,
+    QScrollBar::sub-page:vertical {
+        background: none;
+    }
+    QLabel {
+        color: white;
+        font-size: 14pt;
+    }
+    QLabel[class="details"] {
+        color: rgba(255,255,255,0.6);
+        font-size: 10pt;
+    }
+   </string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="mainLayout">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QFrame" name="phoneFrame">
+      <layout class="QVBoxLayout" name="phoneLayout">
+       <!-- Dynamic Island -->
+       <item alignment="Qt::AlignHCenter|Qt::AlignTop">
+        <widget class="QFrame" name="dynamicIsland">
+         <property name="styleSheet">
+          <string notr="true">
+           QFrame#dynamicIsland {
+            background-color: black;
+            border-radius: 20px;
+           }
+          </string>
+         </property>
+         <layout class="QHBoxLayout" name="islandLayout">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+         </layout>
+        </widget>
+       </item>
+       <!-- Status Bar -->
+       <item>
+        <widget class="QFrame" name="statusBar">
+         <layout class="QHBoxLayout" name="statusLayout">
+          <item>
+           <widget class="QLabel" name="timeLabel">
+            <property name="text">
+             <string>9:41</string>
+            </property>
+           </widget>
+          </item>
+          <item alignment="Qt::AlignRight">
+           <widget class="QLabel" name="batteryLabel">
+            <property name="text">
+             <string>🔋 100%</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <!-- Navigation Bar -->
+       <item>
+        <widget class="QFrame" name="navBar">
+         <layout class="QHBoxLayout" name="navLayout">
+          <item>
+           <widget class="QLabel" name="contactName">
+            <property name="text">
+             <string>🔐 Secure Chat</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <!-- Key Input Area -->
+       <item>
+        <layout class="QHBoxLayout" name="keyLayout">
+         <item>
+          <widget class="QLineEdit" name="keyEdit">
+           <property name="placeholderText">
+            <string>Enter encryption key...</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="generateKeyButton">
+           <property name="text">
+            <string>🎲</string>
+           </property>
+           <property name="maximumWidth">
+            <number>44</number>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <!-- Chat Area -->
+       <item>
+        <widget class="QScrollArea" name="chatScroll">
+         <property name="widgetResizable">
+          <bool>true</bool>
+         </property>
+         <widget class="QWidget" name="chatContent">
+          <layout class="QVBoxLayout" name="chatLayout">
+           <property name="spacing">
+            <number>12</number>
+           </property>
+           <!-- Message Input Area -->
+           <item>
+            <layout class="QHBoxLayout" name="inputLayout">
+             <item>
+              <widget class="QPlainTextEdit" name="inputText">
+               <property name="maximumHeight">
+                <number>100</number>
+               </property>
+               <property name="placeholderText">
+                <string>iMessage</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="encryptButton">
+               <property name="text">
+                <string>↑</string>
+               </property>
+               <property name="objectName">
+                <string>sendButton</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <!-- Bottom Bar -->
+           <item>
+            <layout class="QHBoxLayout" name="bottomBar">
+             <item>
+              <widget class="QPushButton" name="clearButton">
+               <property name="text">
+                <string>Clear</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="decryptButton">
+               <property name="text">
+                <string>🔓 Decrypt</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="copyButton">
+               <property name="text">
+                <string>Copy</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-7801a5b2040b0ffcb6f4.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "symetrical_enctyption",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "symetrical_enctyption::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-symetrical_enctyption-Debug-6d44b69bb4ce7b9e4a31.json",
+					"name" : "symetrical_enctyption",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "symetrical_enctyption_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-symetrical_enctyption_autogen-Debug-4525ea56ebdf34f5aed5.json",
+					"name" : "symetrical_enctyption_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "symetrical_enctyption_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-symetrical_enctyption_autogen_timestamp_deps-Debug-5ca6c0fac3a153611dd4.json",
+					"name" : "symetrical_enctyption_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "E:/sym_encry/symetrical_enctyption/build/Desktop_Qt_6_8_1_MinGW_64_bit-Debug",
+		"source" : "E:/sym_encry/symetrical_enctyption"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}
